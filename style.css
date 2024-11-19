@@ -80,8 +80,8 @@ body {
     overflow: auto;
     height: 460px;
     margin-bottom: 82px;
-    scrollbar-width: thin ;
-    scrollbar-color: #ccccf5 transparent ;
+    scrollbar-width: thin;
+    scrollbar-color: #ccccf5 transparent;
 }
 
 .chat-body .message {
@@ -116,7 +116,7 @@ body {
     font-size: 0.9rem;
 }
 
-.chat-body .bot-message .thinking .message-text{
+.chat-body .bot-message .thinking .message-text {
     padding: 2px 16px;
 }
 
@@ -129,6 +129,12 @@ body {
     background: rgb(33, 93, 162);
     color: aliceblue;
     border-radius: 13px 13px 3px 13px;
+}
+
+.chat-body .user-message .attachment {
+    width: 50%;
+    margin-top: -7px;
+    border-radius: 13px 3px 13px 13px;
 }
 
 
@@ -185,7 +191,7 @@ body {
     padding: 15px 22px 20px;
 }
 
-.chat-footer .chat-form{
+.chat-footer .chat-form {
     display: flex;
     align-items: center;
     background: white;
@@ -193,31 +199,31 @@ body {
     border-radius: 32px;
 }
 
-.chat-footer .chat-form:focus-within{
+.chat-footer .chat-form:focus-within {
     outline: 2px solid rgb(33, 93, 162);
 }
 
-.chat-form .message-input{
+.chat-form .message-input {
     border: none;
     outline: none;
     height: 47px;
     width: 100%;
     resize: none;
     font-size: 0.95rem;
-    padding: 14px 0 0 18px ;
+    padding: 14px 0 0 18px;
     border-radius: inherit;
 }
 
-.chat-form .chat-control{
+.chat-form .chat-control {
     display: flex;
     height: 47px;
     align-items: center;
     align-self: flex-end;
-    padding-right: 6px ;
+    padding-right: 6px;
     gap: 3px;
 }
 
-.chat-form .chat-control button{
+.chat-form .chat-control button {
     height: 35px;
     width: 35px;
     cursor: pointer;
@@ -229,20 +235,52 @@ body {
     transition: .2s ease;
 }
 
-.chat-form .chat-control button:hover{
+.chat-form .chat-control button:hover {
     background: #eeeeff;
 }
 
-.chat-form .chat-control #send-message{
+.chat-form .chat-control #send-message {
     background: rgb(33, 93, 162);
     color: #eeeeff;
     display: none;
 }
 
-.chat-form .message-input:valid~.chat-control #send-message{
+.chat-form .message-input:valid~.chat-control #send-message {
     display: block;
 }
 
-.chat-form .chat-control #send-message:hover{
+.chat-form .chat-control #send-message:hover {
     background: rgb(33, 93, 162);
+}
+
+.chat-form .file-upload-wrapper {
+    height: 35px;
+    width: 35px;
+    position: relative;
+}
+
+.chat-form .file-upload-wrapper :where(img, button) {
+    position: absolute;
+}
+
+.chat-form .file-upload-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chat-form .file-upload-wrapper #file-cancel {
+    color: red;
+    background: white;
+}
+
+.chat-form .file-upload-wrapper :where(img, #file-cancel),
+.chat-form .file-upload-wrapper .file-uploaded #file-upload {
+    display: none;
+}
+
+.chat-form .file-upload-wrapper .file-uploaded img,
+.chat-form .file-upload-wrapper .file-uploaded:hover #file-cancel {
+    display: block;
 }
